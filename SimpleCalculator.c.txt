@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    char islem;
+    double sayi1, sayi2;
+
+    printf("=== BASIT HESAP MAKINESI ===\n");
+    printf("Yapilacak islemi secin (+, -, *, /): ");
+    scanf("%c", &islem);
+
+    printf("Iki sayi girin: ");
+    scanf("%lf %lf", &sayi1, &sayi2);
+
+    switch (islem) {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf\n", sayi1, sayi2, sayi1 + sayi2);
+            break;
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf\n", sayi1, sayi2, sayi1 - sayi2);
+            break;
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf\n", sayi1, sayi2, sayi1 * sayi2);
+            break;
+        case '/':
+            if (sayi2 != 0)
+                printf("%.1lf / %.1lf = %.1lf\n", sayi1, sayi2, sayi1 / sayi2);
+            else
+                printf("Hata! Bir sayi 0'a bolunemez.\n");
+            break;
+        default:
+            printf("Gecersiz islem girdiniz.\n");
+    }
+
+    return 0;
+}
